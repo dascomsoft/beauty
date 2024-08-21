@@ -7,14 +7,14 @@ const book = () => {
     <div>
       <div className="book-content">
         <div className="container mx-auto px-4">
-          <h1 className='font-extrabold text-white xl: text-3xl sm:text-2xl md:text-3xl  lg:text-5xl'>"Book Now to Elevate Your Style & Secure <br /> Your Spot at  Beauty<span className='text-pink-600'>Diva</span>!</h1>
+          <h1 className='font-extrabold text-white xl: text-3xl sm:text-2xl md:text-3xl  lg:text-5xl'>Book Now to Elevate Your Style & Secure <br /> Your Spot at  Beauty<span className='text-pink-600'>Diva!</span></h1>
         </div>
       </div>
       <div className="book-contact mt-20 mb-20">
         <div className="container mx-auto px-4">
           <div className='mb-20'>
             <h1 className='text-7xl font-bold text-slate-900 mb-3'>Book Now</h1>
-            <p className='text-xl'>We believe that reserving your visit at Beauty<span className='text-pink-600 font-bold'>Diva</span> should be as easy as a couple of clicks. Visit the link to find a time that's perfect for you. Do not see the service or time you are looking for? Call us! We are here to help: 503-477-7473..</p>
+            <p className='text-xl'>We believe that reserving your visit at Beauty<span className='text-pink-600'>Diva</span> should be as easy as a couple of clicks. Visit the link to find a time that is perfect for you. Do not see the service or time you are looking for? Call us! We are here to help: 503-477-7473..</p>
           </div>
           <div className="grid md:grid-cols-2 gap-0">
             <div className="">
@@ -45,7 +45,7 @@ const book = () => {
                 <textarea
                   name="message"
                   id="message"
-                  cols="30" rows="10"
+                  cols={30} rows={10}
                   placeholder="Your message"
                   className="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 ></textarea>
