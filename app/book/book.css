@@ -1,0 +1,13 @@
+.book-content {
+  background-image: linear-gradient(rgba(51, 20, 46, 0.7), rgba(51, 20, 49, 0.7)), url(../../images/bookimage.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 250px 0 150px;
+  line-height: 1.8;
+}
+@media (max-width: 800px) {
+  .book-content {
+    padding: 200px 0 50px;
+  }
+}/*# sourceMappingURL=book.css.map */

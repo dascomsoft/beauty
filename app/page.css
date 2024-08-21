@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.home-header {
+  background-image: url(../images/header-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 250px 0 100px;
+}
+.home-header h1::after {
+  content: "";
+  width: 100px;
+  height: 80px;
+  background-color: rgb(215, 20, 53);
+}
+
+.section-container {
+  background-image: url(../images/intro-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0 150px;
+  line-height: 1.8;
+}
+
+.service-container {
+  background-image: url(../images/service-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0 150px;
+  line-height: 1.8;
+}
+.service-container #icon {
+  color: white;
+}
+
+.testimony-container {
+  background-image: url(../images/review-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0 150px;
+  line-height: 1.8;
+}
+
+.partners-container {
+  background-image: url(../images/brands-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0 80px;
+  line-height: 1.8;
+}
+
+.subscribe-container {
+  padding: 100px 0 100px;
+  background-color: rgb(252, 228, 232);
+}
+.subscribe-container p::before {
+  content: "✔";
+  color: green;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=page.css.map */

@@ -1,0 +1,28 @@
+.contact-content {
+  background-image: linear-gradient(rgba(51, 20, 46, 0.7), rgba(51, 20, 49, 0.7)), url(../../images/contact-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 250px 0 150px;
+  line-height: 1.8;
+}
+@media (max-width: 800px) {
+  .contact-content {
+    padding: 200px 0 50px;
+  }
+}
+
+.section-contact {
+  background-image: url(../../images/review.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 150px 0 150px;
+  line-height: 1.8;
+}
+@media (max-width: 800px) {
+  .section-contact {
+    padding: 50px 0 50px;
+  }
+}/*# sourceMappingURL=contact.css.map */

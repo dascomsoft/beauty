@@ -1,0 +1,56 @@
+.news-hero{
+    background-image:linear-gradient(rgba(20,21,51,0.7),rgba(20,21, 51,0.7)) , url(../../images/hero.jpg);
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:200px 0 100px;
+    color:#fff;
+    @media(max-width:800px){
+        padding:200px 0 50px;
+    }
+}
+
+
+
+.service-container {
+    background-image: url(../../images/service-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:150px 0 150px;
+    line-height: 1.8;
+    @media(max-width:800px){
+        padding:60px 0 60px;
+    }
+}     
+
+
+.extra-section{
+    background-image: url(../../images/service-bg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:100px 0 0px;
+    line-height: 1.8;
+    @media(max-width:800px){
+        padding:80px 0 80px;
+    }
+    @media(max-width:500px){
+        padding:25px 0 ;
+    }
+
+     .extra-title{
+        padding-bottom: 100px;
+     }
+}
+
+
+.review-section{
+    background-image:linear-gradient(rgba(238, 3, 140, 0.8),rgba(14, 0, 6, 0.7)) , url(../../images/review.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding:50px 0 50px;
+    line-height: 1.8;
+}

@@ -1,0 +1,30 @@
+
+.pricing-header{
+    background-image: url(../../images/bg.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding:150px 0 150px;
+        line-height: 1.8;
+}
+
+.subscribe-container {
+
+    p::before {
+        content: '\2714';
+        color: green;
+        font-size: 1.2rem;
+    }
+
+}
+
+
+
+.team-section{
+    padding:100px 0 100px;
+    .pic{
+        width:400px;
+        height:400px;
+        object-fit: cover;
+    }
+}
