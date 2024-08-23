@@ -24,7 +24,7 @@ const about = () => {
             <p className='mt-6'>Lorem ipsum dolor sit amet, consectetur adipiscingDonec malesuada lorem.<br />
               maximus mauris sceleri sque, at rutrum nulla  dictum. Ut ac ligula .<br />
               sapien cursus faucibus finibus.</p><br />
-            <Link href="#" className='px-14 py-4 border-2 border-white font-bold rounded-full bg-transparant transition duration-700 ease-in-out  hover:bg-white  hover:text-black '>View our offers</Link>
+            <Link href="/pricing" className='px-14 py-4 border-2 border-white font-bold rounded-full bg-transparant transition duration-700 ease-in-out  hover:bg-white  hover:text-black '>View our offers</Link>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ const about = () => {
       <div className="about-section text-white">
         <div className="container mx-auto px-8">
           <div className="text-center mx-auto">
-            <h1 className='xl: text-4xl sm:text-4xl md:text-5xl  lg:text-7xl font-bold'>Welcome to <br /> Hopkins</h1>
+            <h1 className='xl: text-4xl sm:text-4xl md:text-5xl  lg:text-7xl font-bold'>Welcome to <br />Beauty<span className='text-pink-600'>Diva</span></h1>
             <p className='mt-7'>Whether it is edgy and modern or sleek and elegant, we strive to create the perfect look for each individual client. We are also determined to provide each and every client with the highest degree of customer service in a friendly and professional setting. We are dedicated to performing our craft exceptionally well. To sum up: <br /> we do not want any single client to believe he or she can be better served at any other salon.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-14">
@@ -65,7 +65,7 @@ const about = () => {
 
       <div className="team-section">
         <div className="container mx-auto px-4">
-          <h1 className='text-5xl font-black text-center mb-24'>Meet Our Artists</h1>
+          <h1 className='text-3xl font-black text-center mb-14'>Meet Our Artists</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="team-detail shadow-lg cursor-pointer transition duration-500 ease-in-out hover:-translate-y-5">
               <Image src={staff} alt='pic' className='pic' />

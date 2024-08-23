@@ -20,8 +20,8 @@ const news = () => {
                 <p className='mt-2'>A small river named Duden flows by their place and supplies it with the necessary regelialia. <br /> It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
               </div>
               <div className="flex flex-wrap items-center gap-4 mt-6">
-                <Link href="#" className='px-12 py-3 rounded-full border-2 border-white transition duration-700 ease-in-out  bg-transparent hover:bg-white hover:text-black'>Our services</Link>
-                <Link href="#" className='px-12 py-3 rounded-full border-2 border-white transition duration-700 ease-in-out  bg-transparent hover:bg-white hover:text-black'>Make an appoitment</Link>
+                <Link href="/contact" className='px-12 py-3 rounded-full border-2 border-white transition duration-700 ease-in-out  bg-transparent hover:bg-white hover:text-black'>Get in touch</Link>
+                <Link href="/book" className='px-12 py-3 rounded-full border-2 border-white transition duration-700 ease-in-out  bg-transparent hover:bg-white hover:text-black'>Make an appoitment</Link>
               </div>
             </div>
           </div>

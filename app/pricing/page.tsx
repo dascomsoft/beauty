@@ -12,7 +12,7 @@ const pricing = () => {
     <div className="pricing-header">
         <div className="subscribe-container">
         <div className="container mx-auto px-4">
-          <div className='text-center py-20'>
+          <div className='text-center py-10'>
             <h1>Our Pricing</h1>
             <h3 className="text-5xl font-black text-pink-900">Get Our Package Pricing</h3>
           </div>
@@ -29,7 +29,7 @@ const pricing = () => {
                 <p>Quam adipiscing vitae proin</p>
                 <p>Massa ultricies mi quis hendrerit</p>
                 <br />
-                <Link href="/book" className='rounded-full w-full block text-center py-1  py-2 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                <Link href="/book" className='rounded-full w-full block text-center py-1  border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
               </div>
             </div>
             <div className="shadow border-2 border-slate-200  cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
@@ -68,7 +68,7 @@ const pricing = () => {
 
       <div className="team-section">
         <div className="container mx-auto px-4">
-          <h1 className='text-5xl font-black text-center mb-24'>Meet Our Artists</h1>
+          <h1 className='text-3xl font-black text-center mb-14'>Meet Our Artists</h1>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="team-detail  shadow-lg cursor-pointer transition duration-500 ease-in-out hover:-translate-y-5">
               <Image src={staff} alt='pic' className='pic' />

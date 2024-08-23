@@ -3,11 +3,15 @@ import face from '../images/face.jpg'
 import author from '../images/author.jpg'
 import author1 from '../images/author1.jpg'
 import author2 from '../images/author2.jpg'
-import pixa from '../images/pixar.png'
-import pirate from '../images/pirate.png'
-import himalaya from '../images/himalaya.png'
-import sa from '../images/sa.png'
-import south from '../images/south.png'
+import pixa from '../images/insta-1.jpg'
+import pirate from '../images/insta-3.jpg'
+import himalaya from '../images/gallery-2.jpg'
+import sa from '../images/insta-4.jpg'
+import south from '../images/insta-5.jpg'
+import gall5 from '../images/gallery-5.jpg'
+import gall6 from '../images/gallery-6.jpg'
+import gall7 from '../images/gallery-7.jpg'
+
 import Link from 'next/link';
 import './page.css';
 
@@ -20,7 +24,8 @@ const page = () => {
                         <div className="home-detail bg-black text-white p-7">
                             <h1 className='font-extrabold text-5xl py-3'>Be Bold <br /> Be Beautiful</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                            <button className='bg-pink-600 text-white px-12 py-2 mt-4'>See Offers</button>
+                            <br />
+                            <Link  href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-4'>See Offers</Link>
                         </div>
                         <Image src={face} alt='face picture' className='w-full h-full object-cover' />
                     </div>
@@ -30,7 +35,7 @@ const page = () => {
                 <div className="section-container bg-red-100 ">
                     <div className="container mx-auto px-6">
                         <div>
-                            <h1 className='font-extrabold text-5xl py-6'>Why Choose Us?</h1>
+                            <h1 className='font-extrabold text-3xl mb-5'>Why Choose Us?</h1>
                             <p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis </p>
                             <p>leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus </p>
                             <p>hendrerit, id lobortis leo luctus nec. In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui </p>
@@ -72,7 +77,7 @@ const page = () => {
                 <div className="service-content">
                     <div className="service-container text-white bg-pink-600">
                         <div className="container mx-auto px-4">
-                            <h1 className='font-extrabold text-6xl mb-20 text-white text-center'>Our Services</h1>
+                            <h1 className='font-extrabold text-4xl mb-20 text-white text-center'>Our Services</h1>
                             <div className="service-description grid md:grid-cols-2 lg:grid-cols-3 gap-14">
                                 <div className="section-detail shadow-xl p-4 bg-pink-600">
                                     <svg fill="white" width="60px" height="60px" viewBox="0 0 50 50" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" overflow="inherit"><path d="M42.233 25.31c.347-.427 1.058-.918 1.579-1.09l4.294-1.753c.492-.247.894-.899.894-1.448v-12.249c0-.55-.421-1.16-.935-1.355 0 0-8.983-3.415-15.001-3.415-5.6 0-13.342 2.953-13.342 2.953-.514.196-1.381.411-1.927.479l-15.802 1.698c-.546.067-.993.572-.993 1.122v8.314c0 .55.442 1.083.983 1.184l15.795 2.549c.542.09 1.405.33 1.916.533l10.817 2.767c.543.082 1.136.574 1.315 1.095l6.359 18.361c.18.521.754.802 1.275.627l6.723-2.261c.521-.175.801-.743.621-1.264l-4.414-12.733c-.18-.521-.332-.976-.339-1.013l-.008-.038c-.529-2.174.19-3.063.19-3.063zm-7.674-6.609c-2.51 0-4.537-2-4.537-4.465 0-2.466 2.027-4.465 4.537-4.465 2.502 0 4.535 2 4.535 4.465s-2.033 4.465-4.535 4.465z" /></svg>
@@ -251,9 +256,9 @@ const page = () => {
             </div>
             <div className="subscribe-container">
                 <div className="container mx-auto px-4">
-                    <div className='text-center py-20'>
+                    <div className='text-center py-5'>
                         <h1>Our Pricing</h1>
-                        <h3 className="text-5xl font-black text-pink-900">Get Our Package Pricing</h3>
+                        <h3 className="text-4xl font-black text-pink-900 mb-7">Get Our Package Pricing</h3>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3">
                         <div className="shadow  border-2 border-slate-200 cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
@@ -306,12 +311,67 @@ const page = () => {
             </div>
             <div className="partners">
                 <div className="partners-container">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-5">
-                        <Image src={pixa} alt='pixa picture' />
-                        <Image src={pirate} alt='pixa picture' />
-                        <Image src={himalaya} alt='pixa picture' />
-                        <Image src={sa} alt='pixa picture' />
-                        <Image src={south} alt='pixa picture' />
+                    <div className="container mx-auto px-4">
+                        <h1 className='text-3xl font-black mb-10'>Our Gallery</h1>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+                            <div className='icon-content'>
+                                <Image src={pixa} alt='pixa picture' className='w-full' />
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>African Beauty</h1>
+                                    <p className='text-xl'>The Original</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={pirate} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Purify Your Life</h1>
+                                    <p className='text-xl'>The Best Life</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={himalaya} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Queen Lady</h1>
+                                    <p className='text-xl'>Pure Beauty</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={sa} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Lovely Make Up</h1>
+                                    <p className='text-xl'>The Original</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={south} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Colouful Life</h1>
+                                    <p className='text-xl'>The Original</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={gall5} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Beauty Face</h1>
+                                    <p className='text-xl'>The Original</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={gall6} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Beautify Your LIfe</h1>
+                                    <p className='text-xl'>For Real</p>
+                                </div>
+                            </div>
+                            <div className='icon-content'>
+                                <Image src={gall7} alt='pixa picture' className='w-full'/>
+                                <div className="icon-detail">
+                                    <h1 className='text-3xl'>Sunshine Beauty</h1>
+                                    <p className='text-xl'>The Original</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

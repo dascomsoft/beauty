@@ -5,15 +5,11 @@ import './book.css'
 const book = () => {
   return (
     <div>
-      <div className="book-content">
-        <div className="container mx-auto px-4">
-          <h1 className='font-extrabold text-white xl: text-3xl sm:text-2xl md:text-3xl  lg:text-5xl'>Book Now to Elevate Your Style & Secure <br /> Your Spot at  Beauty<span className='text-pink-600'>Diva!</span></h1>
-        </div>
-      </div>
+
       <div className="book-contact mt-20 mb-20">
         <div className="container mx-auto px-4">
-          <div className='mb-20'>
-            <h1 className='text-7xl font-bold text-slate-900 mb-3'>Book Now</h1>
+          <div className='py-32'>
+            <h1 className='text-4xl font-extrabold text-slate-900 mb-5'>Book Now</h1>
             <p className='text-xl'>We believe that reserving your visit at Beauty<span className='text-pink-600'>Diva</span> should be as easy as a couple of clicks. Visit the link to find a time that is perfect for you. Do not see the service or time you are looking for? Call us! We are here to help: 503-477-7473..</p>
           </div>
           <div className="grid md:grid-cols-2 gap-0">
@@ -42,6 +38,19 @@ const book = () => {
                   placeholder="Enter your email"
                   className="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 />
+                <select
+                  id="service"
+                  name="service"
+                  className="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                >
+                  <option value="" selected disabled>
+                    Select your service
+                  </option>
+                  <option value="hair">Hair Dressing</option>
+                  <option value="massage">Massage</option>
+                  <option value="mani">Manicure & Pedicure</option>
+                  <option value="spa">Spa</option>
+                </select>
                 <textarea
                   name="message"
                   id="message"
@@ -57,9 +66,6 @@ const book = () => {
                 />
               </form>
             </div>
-          </div>
-          <div className="mt-5 text-center text-red-600 font-bold text-lg hidden" id="error-message">
-            Veuillez remplir tous les champs obligatoires!!!
           </div>
         </div>
       </div>
