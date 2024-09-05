@@ -5,20 +5,20 @@ import staff1 from '../../images/staff1.jpg'
 import staff2 from '../../images/staff2.jpg'
 import staff3 from '../../images/staff3.jpg'
 import Image
- from "next/image";
+  from "next/image";
 
 const pricing = () => {
   return (
     <div className="pricing-header">
-        <div className="subscribe-container">
+      <div className="subscribe-container">
         <div className="container mx-auto px-4">
           <div className='text-center py-10'>
             <h1>Our Pricing</h1>
             <h3 className="text-5xl font-black text-pink-900">Get Our Package Pricing</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-3">
-          <div className="shadow  border-2 border-slate-200 cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
-          <div className='bg-slate-800 text-white p-7'>
+            <div className="shadow  border-2 border-slate-200 cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
+              <div className='bg-slate-800 text-white p-7'>
                 <h3 className='py-2'>Basic Plan</h3>
                 <h6><span className='font-bold text-3xl'>$130</span>/Month</h6>
               </div>
@@ -58,9 +58,9 @@ const pricing = () => {
                 <p>Quam adipiscing vitae proin</p>
                 <p>Quam adipiscing vitae proin</p>
                 <p>Massa ultricies mi quis hendrerit</p>
-                 <br />
+                <br />
                 <Link href="/book" className='rounded-full w-full block text-center py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
-                </div>
+              </div>
             </div>
           </div>
         </div>

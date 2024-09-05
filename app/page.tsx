@@ -11,6 +11,9 @@ import south from '../images/insta-5.jpg'
 import gall5 from '../images/gallery-5.jpg'
 import gall6 from '../images/gallery-6.jpg'
 import gall7 from '../images/gallery-7.jpg'
+import blog1 from '../images/blog-list1.jpg'
+import blog2 from '../images/blog-list2.jpg'
+import blog3 from '../images/blog-list3.jpg'
 
 import Link from 'next/link';
 import './page.css';
@@ -25,7 +28,7 @@ const page = () => {
                             <h1 className='font-extrabold text-5xl py-3'>Be Bold <br /> Be Beautiful</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
                             <br />
-                            <Link  href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-4'>See Offers</Link>
+                            <Link href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-4'>See Offers</Link>
                         </div>
                         <Image src={face} alt='face picture' className='w-full h-full object-cover' />
                     </div>
@@ -322,55 +325,92 @@ const page = () => {
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={pirate} alt='pixa picture' className='w-full'/>
+                                <Image src={pirate} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Purify Your Life</h1>
                                     <p className='text-xl'>The Best Life</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={himalaya} alt='pixa picture' className='w-full'/>
+                                <Image src={himalaya} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Queen Lady</h1>
                                     <p className='text-xl'>Pure Beauty</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={sa} alt='pixa picture' className='w-full'/>
+                                <Image src={sa} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Lovely Make Up</h1>
                                     <p className='text-xl'>The Original</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={south} alt='pixa picture' className='w-full'/>
+                                <Image src={south} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Colouful Life</h1>
                                     <p className='text-xl'>The Original</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={gall5} alt='pixa picture' className='w-full'/>
+                                <Image src={gall5} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Beauty Face</h1>
                                     <p className='text-xl'>The Original</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={gall6} alt='pixa picture' className='w-full'/>
+                                <Image src={gall6} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Beautify Your LIfe</h1>
                                     <p className='text-xl'>For Real</p>
                                 </div>
                             </div>
                             <div className='icon-content'>
-                                <Image src={gall7} alt='pixa picture' className='w-full'/>
+                                <Image src={gall7} alt='pixa picture' className='w-full' />
                                 <div className="icon-detail">
                                     <h1 className='text-3xl'>Sunshine Beauty</h1>
                                     <p className='text-xl'>The Original</p>
                                 </div>
                             </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='pb-[8rem] pt-[6rem]'>
+                <div className='container mx-auto px-4'>
+                    <div className='text-center'>
+                        <h1 className='text-xl'>News & Blog</h1>
+                        <h3 className="text-5xl font-black text-pink-500 mb-7">Latest News & Blog</h3>
+                    </div>
+                    <div className="blog-content grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                        <div className="blog1">
+                            <Image src={blog1} alt='blog picture' />
+                            <div className='shadow-lg border-2 border-white p-8'>
+                                <h3 className="px-2 py-2 text-center rounded-full bg-pink-500 text-white border-2 border-whiteblock w-auto max-w-[200px] ">22.03.2022</h3>
+                                <h2 className="text-3xl font-semibold mt-4">Winter is for Multi-Masking</h2>
+                                <p className="py-[15px]">This is program designed to make the practice of yoga beneficial for people of all ages, abilities, and backgrounds.</p>
+                                <Link href="/blog" className="block w-auto max-w-[200px] font-bold   bg-pink-500 transition duration-500 ease-in-out  hover:bg-red-600 text-white text-center py-3 px-4 mt-7">READ MORE</Link>
+                            </div>
+                        </div>
+                        <div className='blog2'>
+                            <Image src={blog2} alt='blog picture' />
+                            <div className='shadow-lg border-2 border-white p-8'>
+                                <h3 className="px-2 py-2 text-center rounded-full  bg-pink-500 text-white  border-2 border-whiteblock w-auto max-w-[200px] ">22.03.2022</h3>
+                                <h2 className="text-3xl font-semibold mt-4">What is TikTok's Wet Mop Haircut?</h2>
+                                <p className="py-[15px]">Learn how to ease back into your CrossFit routine after a vacation with tips and strategies for success.</p>
+                                <Link href="/blog" className="block w-auto max-w-[200px] font-bold   bg-pink-500 transition duration-500 ease-in-out  hover:bg-red-600 text-white text-center py-3 px-4 mt-7">READ MORE</Link>
+                            </div>
+                        </div>
+                        <div className="blog3">
+                            <Image src={blog3} alt='blog picture' />
+                            <div className='shadow-lg border-2 border-white p-8'>
+                                <h3 className="px-2 py-2 text-center rounded-full  bg-pink-500 text-white  border-2 border-whiteblock w-auto max-w-[200px] ">22.03.2022</h3>
+                                <h2 className="text-3xl font-semibold mt-4">Tips for Cutting a Mod Bixie</h2>
+                                <p className="py-[15px]">Get to know Grace, a fitness enthusiast and dedicated ambassador who is passionate about helping others reach their fitness goals..</p>
+                                <Link href="/blog" className="block w-auto max-w-[200px] font-bold   bg-pink-500 transition duration-500 ease-in-out  hover:bg-red-600 text-white text-center py-3 px-4 mt-7">READ MORE</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

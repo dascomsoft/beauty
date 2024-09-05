@@ -59,9 +59,6 @@ const contact = () => {
               </form>
             </div>
           </div>
-          <div className="mt-5 text-center text-red-600 font-bold text-lg hidden" id="error-message">
-            Veuillez remplir tous les champs obligatoires!!!
-          </div>
         </div>
       </div>
 

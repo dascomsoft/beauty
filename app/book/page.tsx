@@ -43,7 +43,7 @@ const book = () => {
                   name="service"
                   className="w-full p-4 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 >
-                  <option value="" selected disabled>
+                  <option className="text-black" selected disabled>
                     Select your service
                   </option>
                   <option value="hair">Hair Dressing</option>
