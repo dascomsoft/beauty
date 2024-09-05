@@ -29,9 +29,9 @@ function blog() {
                 <div className="about-header">
                     <div className="container mx-auto px-4">
                         <div className="about-content text-white">
-                            <h2 className='xl: text-2xl sm:text-2xl md:text-4xl  lg:text-6xl font-bold '>Radiance & <span className='text-pink-500'>Style:</span>The Ultimate <br /> Beauty Salon Guide</h2>
-                            <p className='py-[3rem]'>Lorem ipsum dolor sit amet, consectetur adipiscingDonec malesuada lorem.<br />
-                                maximus mauris sceleri sque, at rutrum nulla  dictum. Ut ac ligula .<br />
+                            <h2 className='xl: text-4xl sm:text-2xl md:text-4xl  lg:text-6xl font-bold '>Radiance & <span className='text-pink-500'>Style:</span>The Ultimate <br /> Beauty Salon Guide</h2>
+                            <p className='py-[3rem] text-xl'>Lorem ipsum dolor sit amet, consectetur adipiscingDonec malesuada lorem.<br />
+                                maximus mauris sceleri sque, at rutrum nulla  dictum. Ut ac ligula <br />
                                 sapien cursus faucibus finibus.</p>
                             <br />
                             <Link href="/pricing" className='px-14 py-4 border-none text-xl font-bold rounded-full bg-pink-500 transition duration-700 ease-in-out  hover:bg-white  hover:text-black '>View our offers</Link>

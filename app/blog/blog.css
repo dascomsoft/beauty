@@ -4,4 +4,9 @@
   background-position: center;
   background-size: cover;
   padding: 200px 0 200px;
+}
+@media (max-width: 800px) {
+  .about-header {
+    padding: 200px 0 80px;
+  }
 }/*# sourceMappingURL=blog.css.map */
