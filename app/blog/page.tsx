@@ -57,7 +57,7 @@ function blog() {
                                 <div className="blog-detail">
                                     <Image src={blog2} alt='blog picture' />
                                     <div className="blog-text bg-stone-100 p-10">
-                                        <h2 className="text-2xl font-semibold py-9">What is TikTok's Wet Mop Haircut?</h2>
+                                        <h2 className="text-2xl font-semibold py-9">What is TikTok Wet Mop Haircut?</h2>
                                         <p>Passion is the driving force behind our gym team members. They have a genuine love for fitness and a deep-rooted desire to inspire and motivate others. Their contagious enthusiasm creates a positive and energizing atmosphere within our gym</p>
                                     </div>
                                 </div>

@@ -398,7 +398,7 @@ const page = () => {
                             <Image src={blog2} alt='blog picture' />
                             <div className='shadow-lg border-2 border-white p-8'>
                                 <h3 className="px-2 py-2 text-center rounded-full  bg-pink-500 text-white  border-2 border-whiteblock w-auto max-w-[200px] ">22.03.2022</h3>
-                                <h2 className="text-3xl font-semibold mt-4">What is TikTok's Wet Mop Haircut?</h2>
+                                <h2 className="text-3xl font-semibold mt-4">What is TikTok Wet Mop Haircut?</h2>
                                 <p className="py-[15px]">Learn how to ease back into your CrossFit routine after a vacation with tips and strategies for success.</p>
                                 <Link href="/blog" className="block w-auto max-w-[200px] font-bold   bg-pink-500 transition duration-500 ease-in-out  hover:bg-red-600 text-white text-center py-3 px-4 mt-7">READ MORE</Link>
                             </div>
