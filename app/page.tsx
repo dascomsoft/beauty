@@ -24,11 +24,11 @@ const page = () => {
             <div className="home-header">
                 <div className="container mx-auto px-6">
                     <div className='grid md:grid-cols-2 border-2 border-pink-600'>
-                        <div className="home-detail bg-black text-white p-7">
+                        <div className="home-detail bg-black text-white p-7 flex  flex-col justify-center">
                             <h1 className='font-extrabold text-5xl py-3'>Be Bold <br /> Be Beautiful</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
                             <br />
-                            <Link href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-4'>See Offers</Link>
+                            <Link href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-3 w-[200px] text-center rounded-lg'>See Offers</Link>
                         </div>
                         <Image src={face} alt='face picture' className='w-full h-full object-cover' />
                     </div>
