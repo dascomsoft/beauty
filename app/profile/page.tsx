@@ -1,3 +1,7 @@
+
+
+
+
 "use client";
 import { useEffect, useState } from "react";
 import { auth, db } from "../../firebaseConfig";
@@ -8,37 +12,33 @@ const Profile = () => {
   const [clientData, setClientData] = useState<any>(null);
   const [bookings, setBookings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [isBooking, setIsBooking] = useState(false); // État pour le spinner
-  const [clientResponse, setClientResponse] = useState(""); // Réponse du client
-  const [selectedBookingId, setSelectedBookingId] = useState<string | null>(null); // Réservation sélectionnée pour la réponse
+  const [isBooking, setIsBooking] = useState(false);
+  const [clientResponse, setClientResponse] = useState("");
+  const [selectedBookingId, setSelectedBookingId] = useState<string | null>(null);
+  const [ratings, setRatings] = useState<{[key: string]: number}>({});
+  const [comments, setComments] = useState<{[key: string]: string}>({});
 
-  // Predefined options
   const services = ["Haircut", "Beard Trim", "Shaving", "Hair Coloring", "Styling"];
   const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const timeSlots = ["06:00", "07:00", "08:00", "09:00", "10:00", "17:00", "18:00", "19:00"];
 
-  // Convert time to 12-hour format (AM/PM)
   const formatTime = (time: string) => {
     const [hour, minute] = time.split(":");
     const hourNum = parseInt(hour, 10);
     const period = hourNum >= 12 ? "PM" : "AM";
-    const formattedHour = hourNum % 12 || 12; // Convert 0 to 12 for midnight
+    const formattedHour = hourNum % 12 || 12;
     return `${formattedHour}:${minute} ${period}`;
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (client) => {
       if (client) {
-        console.log("✅ Client logged in:", client.uid);
-
-        // Fetch client data
         const clientDocRef = doc(db, "clients", client.uid);
         const clientDocSnap = await getDoc(clientDocRef);
 
         if (clientDocSnap.exists()) {
           setClientData({ id: client.uid, ...clientDocSnap.data() });
 
-          // Fetch client bookings
           const bookingsQuery = query(collection(db, "bookings"), where("clientId", "==", client.uid));
           const bookingsSnapshot = await getDocs(bookingsQuery);
 
@@ -47,13 +47,8 @@ const Profile = () => {
               id: doc.id,
               ...doc.data(),
             }));
-            console.log("Client bookings:", clientBookings);
             setBookings(clientBookings);
-          } else {
-            console.log("No bookings found for this client.");
           }
-        } else {
-          console.log("No client document found.");
         }
       }
       setLoading(false);
@@ -62,46 +57,40 @@ const Profile = () => {
     return () => unsubscribe();
   }, []);
 
-  // Delete a booking
   const deleteBooking = async (id: string) => {
     try {
       await deleteDoc(doc(db, "bookings", id));
       setBookings(bookings.filter((booking) => booking.id !== id));
-      console.log("✅ Booking deleted:", id);
     } catch (error) {
-      console.error("❌ Error deleting booking:", error);
+      console.error("Error deleting booking:", error);
     }
   };
 
-  // Add a booking
   const createBooking = async (service: string, selectedDay: string, selectedTime: string) => {
-    if (!clientData) {
-      console.error("⚠️ No client logged in!");
-      return;
-    }
+    if (!clientData) return;
 
-    setIsBooking(true); // Activer le spinner
-
+    setIsBooking(true);
     try {
       await addDoc(collection(db, "bookings"), {
-        clientId: clientData.id, // 🔥 Automatically add clientId
+        clientId: clientData.id,
         name: clientData.name,
         email: clientData.email,
         phone: clientData.phone,
         service,
         selectedDay,
         selectedTime,
-        createdAt: new Date(), // 📅 Timestamp
-        barberResponse: "", // Réponse du barber (vide par défaut)
-        barberName: "", // Nom du barber (vide par défaut)
-        barberPhone: "", // Téléphone du barber (vide par défaut)
-        respondedAt: null, // Date de réponse (vide par défaut)
-        clientResponse: "", // Réponse du client (vide par défaut)
-        clientRespondedAt: null, // Date de réponse du client (vide par défaut)
+        createdAt: new Date(),
+        barberResponse: "",
+        barberName: "",
+        barberPhone: "",
+        respondedAt: null,
+        clientResponse: "",
+        clientRespondedAt: null,
+        rating: null,
+        comment: "",
+        ratedAt: null,
       });
-      console.log("✅ Booking added!");
 
-      // Reload bookings after adding
       const bookingsQuery = query(collection(db, "bookings"), where("clientId", "==", clientData.id));
       const bookingsSnapshot = await getDocs(bookingsQuery);
       const clientBookings = bookingsSnapshot.docs.map((doc) => ({
@@ -110,40 +99,83 @@ const Profile = () => {
       }));
       setBookings(clientBookings);
     } catch (error) {
-      console.error("❌ Error adding booking:", error);
+      console.error("Error adding booking:", error);
     } finally {
-      setIsBooking(false); // Désactiver le spinner
+      setIsBooking(false);
     }
   };
 
-  // Répondre à la réponse du barber
   const respondToBarber = async (bookingId: string) => {
-    if (!clientResponse) {
-      console.error("⚠️ Please enter a response.");
-      return;
-    }
+    if (!clientResponse) return;
 
     try {
       const bookingRef = doc(db, "bookings", bookingId);
       await updateDoc(bookingRef, {
         clientResponse,
-        clientRespondedAt: new Date(), // Ajouter un timestamp pour la réponse du client
+        clientRespondedAt: new Date(),
       });
-      console.log("✅ Client response sent!");
 
-      // Mettre à jour la liste des réservations
       const updatedBookings = bookings.map((booking) =>
         booking.id === bookingId ? { ...booking, clientResponse, clientRespondedAt: new Date() } : booking
       );
       setBookings(updatedBookings);
-      setClientResponse(""); // Réinitialiser le champ de réponse
-      setSelectedBookingId(null); // Fermer la section de réponse
+      setClientResponse("");
+      setSelectedBookingId(null);
     } catch (error) {
-      console.error("❌ Error responding to barber:", error);
+      console.error("Error responding to barber:", error);
     }
   };
 
-  // Spinner de chargement
+  const submitRating = async (bookingId: string) => {
+    if (!ratings[bookingId] || ratings[bookingId] < 1 || ratings[bookingId] > 5) {
+      alert("Please select a rating between 1 and 5 stars");
+      return;
+    }
+  
+    try {
+      const booking = bookings.find(b => b.id === bookingId);
+      if (!booking) return;
+  
+      // Update the booking
+      const bookingRef = doc(db, "bookings", bookingId);
+      await updateDoc(bookingRef, {
+        rating: ratings[bookingId],
+        comment: comments[bookingId] || "",
+        ratedAt: new Date(),
+      });
+  
+      // Create a new rating in the 'ratings' collection
+      await addDoc(collection(db, "ratings"), {
+        bookingId: bookingId,
+        clientId: clientData.id,
+        clientName: clientData.name,
+        barberId: booking.barberId || "",
+        barberName: booking.barberName || "",
+        service: booking.service,
+        rating: ratings[bookingId],
+        comment: comments[bookingId] || "",
+        createdAt: new Date(),
+        isVisible: true
+      });
+  
+      // Update local state
+      const updatedBookings = bookings.map((booking) =>
+        booking.id === bookingId 
+          ? { 
+              ...booking, 
+              rating: ratings[bookingId], 
+              comment: comments[bookingId] || "",
+              ratedAt: new Date() 
+            } 
+          : booking
+      );
+      setBookings(updatedBookings);
+      setComments({...comments, [bookingId]: ""});
+    } catch (error) {
+      console.error("Error submitting rating:", error);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -157,21 +189,18 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-[11rem] pb-[5rem] px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900">Hello, {clientData?.name}!</h1>
           <p className="mt-2 text-lg text-gray-600">Welcome to your personal space.</p>
         </div>
 
-        {/* Two-column layout */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left column: Booking form */}
           <div className="bg-white shadow-lg rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">Book a Service</h2>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                const formData = new FormData(e.target as HTMLFormElement); // Caster e.target en HTMLFormElement
+                const formData = new FormData(e.target as HTMLFormElement);
                 const service = formData.get("service");
                 const selectedDay = formData.get("selectedDay");
                 const selectedTime = formData.get("selectedTime");
@@ -181,7 +210,6 @@ const Profile = () => {
               }}
               className="space-y-6"
             >
-              {/* Service */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Service</label>
                 <select
@@ -198,7 +226,6 @@ const Profile = () => {
                 </select>
               </div>
 
-              {/* Day */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Day</label>
                 <select
@@ -215,7 +242,6 @@ const Profile = () => {
                 </select>
               </div>
 
-              {/* Time */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Time</label>
                 <select
@@ -232,7 +258,6 @@ const Profile = () => {
                 </select>
               </div>
 
-              {/* Submit button */}
               <button
                 type="submit"
                 disabled={isBooking} 
@@ -247,7 +272,6 @@ const Profile = () => {
             </form>
           </div>
 
-          {/* Right column: Booking list */}
           <div className="bg-white shadow-lg rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-800 mb-6">📅 My Bookings</h2>
             {bookings.length === 0 ? (
@@ -260,6 +284,7 @@ const Profile = () => {
                     <p className="text-gray-600">
                       {booking.selectedDay} at {formatTime(booking.selectedTime)}
                     </p>
+                    
                     {booking.barberResponse && (
                       <div className="mt-4">
                         <p className="text-green-600">
@@ -270,6 +295,7 @@ const Profile = () => {
                         </p>
                       </div>
                     )}
+                    
                     {booking.clientResponse && (
                       <div className="mt-4">
                         <p className="text-blue-600">
@@ -277,6 +303,7 @@ const Profile = () => {
                         </p>
                       </div>
                     )}
+                    
                     {booking.barberResponse && !booking.clientResponse && (
                       <div className="mt-4">
                         <textarea
@@ -294,6 +321,57 @@ const Profile = () => {
                         </button>
                       </div>
                     )}
+                    
+                    {/* Rating Section */}
+                    {(!booking.rating || !booking.ratedAt) ? (
+                      <div className="mt-6 border-t pt-4">
+                        <h3 className="font-medium text-gray-800 mb-2">Rate this service</h3>
+                        <div className="flex items-center mb-3">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <span 
+                              key={star}
+                              className="text-2xl text-yellow-500 cursor-pointer"
+                              onClick={() => setRatings({...ratings, [booking.id]: star})}
+                            >
+                              {(ratings[booking.id] || 0) >= star ? '★' : '☆'}
+                            </span>
+                          ))}
+                        </div>
+                        <textarea
+                          value={comments[booking.id] || ""}
+                          onChange={(e) => setComments({...comments, [booking.id]: e.target.value})}
+                          placeholder="Share your experience (optional)..."
+                          className="text-black w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                          rows={2}
+                        />
+                        <button
+                          onClick={() => submitRating(booking.id)}
+                          className="mt-2 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition duration-200"
+                        >
+                          Submit Rating
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="mt-6 border-t pt-4">
+                        <h3 className="font-medium text-gray-800 mb-1">Your Rating</h3>
+                        <div className="flex items-center mb-2">
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <span 
+                              key={star}
+                              className="text-xl"
+                            >
+                              {booking.rating >= star ? '★' : '☆'}
+                            </span>
+                          ))}
+                        </div>
+                        {booking.comment && (
+                          <div className="bg-blue-50 p-3 rounded-lg">
+                            <p className="text-gray-700 italic">"{booking.comment}"</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    
                     <button
                       onClick={() => deleteBooking(booking.id)}
                       className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-200"
@@ -307,7 +385,6 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* WhatsApp Button */}
         <div className="mt-12 text-center">
           <a
             href="https://wa.me/+237673916778" 

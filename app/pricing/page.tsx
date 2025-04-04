@@ -29,7 +29,7 @@ const pricing = () => {
                 <p>Quam adipiscing vitae proin</p>
                 <p>Massa ultricies mi quis hendrerit</p>
                 <br />
-                <Link href="/book" className='rounded-full w-full block text-center py-1  border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                <Link href="/register" className='rounded-full w-full block text-center py-1  border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
               </div>
             </div>
             <div className="shadow border-2 border-slate-200  cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
@@ -44,7 +44,7 @@ const pricing = () => {
                 <p>Quam adipiscing vitae proin</p>
                 <p>Massa ultricies mi quis hendrerit</p>
                 <br />
-                <Link href="/book" className='rounded-full w-full block text-center  py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                <Link href="/register" className='rounded-full w-full block text-center  py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
               </div>
             </div>
             <div className="shadow  border-2 border-slate-200 cursor-pointer transition duration-700 ease-in-out hover:-translate-y-7 ">
@@ -59,7 +59,7 @@ const pricing = () => {
                 <p>Quam adipiscing vitae proin</p>
                 <p>Massa ultricies mi quis hendrerit</p>
                 <br />
-                <Link href="/book" className='rounded-full w-full block text-center py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                <Link href="/register" className='rounded-full w-full block text-center py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
               </div>
             </div>
           </div>

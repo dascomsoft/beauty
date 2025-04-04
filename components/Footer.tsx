@@ -17,17 +17,16 @@ const Footer = () => {
                             <p><Link className="hover:text-yellow-500" href="/pricing">Pricing</Link></p>
                             <p><Link className="hover:text-yellow-500"  href="/services">Services</Link></p>
                             <p><Link className="hover:text-yellow-500"  href="/contact">Contact</Link></p>
-                            <p><Link className="hover:text-yellow-500"  href="/book">Book now</Link></p>
 
                         </div>
                         <div className="footer-detail">
                             <h5 className="font-extrabold text-2xl mb-3">SERVICES</h5>
-                            <p><Link className="hover:text-yellow-500"  href="#">Massage</Link></p>
-                            <p><Link className="hover:text-yellow-500"  href="#">Manicure & Pedicure</Link></p>
-                            <p><Link href="#">Make Up</Link></p>
-                            <p><Link className="hover:text-yellow-500"  href="#">Hair Dressing</Link></p>
-                            <p><Link className="hover:text-yellow-500"  href="#">Slimming</Link></p>
-                            <p><Link className="hover:text-yellow-500"  href="#">Spa</Link></p>
+                            <p>Massage</p>
+                            <p>Manicure & Pedicure</p>
+                            <p>Make Up</p>
+                            <p>Hair Dressing</p>
+                            <p>Slimming</p>
+                            <p>Spa</p>
                         </div>
                         <div className="section-footer-detail">
                             <div className="section-footer-text">

@@ -28,7 +28,7 @@ const page = () => {
                             <h1 className='font-extrabold text-5xl py-3'>Be Bold <br /> Be Beautiful</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
                             <br />
-                            <Link href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-3 w-[200px] text-center rounded-lg'>See Offers</Link>
+                            <Link href='/pricing' className='bg-pink-600 text-white px-12 py-2 mt-4 w-[200px] text-center rounded-lg'>See Offers</Link>
                         </div>
                         <Image src={face} alt='face picture' className='w-full h-full object-cover' />
                     </div>
@@ -276,7 +276,7 @@ const page = () => {
                                 <p>Quam adipiscing vitae proin</p>
                                 <p>Massa ultricies mi quis hendrerit</p>
                                 <br />
-                                <Link href="/book" className='rounded-full w-full block text-center py-1  border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                                <Link href="/register" className='rounded-full w-full block text-center py-1  border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
                             </div>
                         </div>
                         <div className="shadow border-2 border-slate-200  cursor-pointer transition duration-700 ease-in-out hover:-translate-y-4">
@@ -291,7 +291,7 @@ const page = () => {
                                 <p>Quam adipiscing vitae proin</p>
                                 <p>Massa ultricies mi quis hendrerit</p>
                                 <br />
-                                <Link href="/book" className='rounded-full w-full block text-center  py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                                <Link href="/register" className='rounded-full w-full block text-center  py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
                             </div>
                         </div>
                         <div className="shadow  border-2 border-slate-200 cursor-pointer transition duration-700 ease-in-out hover:-translate-y-7 ">
@@ -306,7 +306,7 @@ const page = () => {
                                 <p>Quam adipiscing vitae proin</p>
                                 <p>Massa ultricies mi quis hendrerit</p>
                                 <br />
-                                <Link href="/book" className='rounded-full w-full block text-center py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
+                                <Link href="/register" className='rounded-full w-full block text-center py-1 border-2 border-slate-400 hover:bg-green-700 hover:border-transparent hover:text-white'>Book Now</Link>
                             </div>
                         </div>
                     </div>
