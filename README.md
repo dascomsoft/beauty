@@ -11,7 +11,7 @@ This web application revolutionizes the salon experience by offering:
 - **User Reviews & Feedback**: Clients can share their experiences, helping salons improve their offerings.
 
 ### Tech Stack
-- **React.js** for an interactive and smooth user experience.
+- **Next.js** for an interactive and smooth user experience.
 - **Tailwind CSS** for a clean and responsive UI design.
 - **Firebase** for real-time updates, authentication, and database management.
 
